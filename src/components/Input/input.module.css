@@ -1,0 +1,19 @@
+.input_container {
+  display: block;
+  width: 100%;
+  max-width: 980px;
+  padding: 0.25rem 0;
+}
+
+.input_container label {
+  color: var(--white);
+  font-size: 14px;
+  display: block;
+  width: 100%;
+}
+
+.input_container input {
+  padding: 0.4rem 1rem;
+  border: 1px solid #afafaf;
+  border-radius: 4px;
+}
