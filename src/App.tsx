@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import "./App.css";
 import Input from "./components/Input";
 import Submit from "./components/Submit";
@@ -7,20 +7,29 @@ function App() {
   interface userSchema {
     name: string;
     email: string;
-    paas: string;
+    password: string;
   }
 
-  const [user, setUser] = useState<userSchema>();
+  const [user, setUser] = useState<userSchema>({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   const onChangeText = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
+    setUser({ ...user!, [name]: value });
     console.log(user);
   };
 
-  const submit = (e: any): void => {
+  const submit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(user);
+    console.log(user!);
+    setUser({
+      name: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
@@ -33,14 +42,16 @@ function App() {
             type="text"
             placeholder="John senna"
             maxLength={256}
+            value={user!.name}
             onTextChange={onChangeText}
           />
           <Input
             label="Email"
-            name="Email"
+            name="email"
             type="email"
             placeholder="jmigul@gmail.com"
             maxLength={256}
+            value={user!.email}
             onTextChange={onChangeText}
           />
           <Input
@@ -49,6 +60,7 @@ function App() {
             type="password"
             placeholder="John senna"
             maxLength={256}
+            value={user!.password}
             onTextChange={onChangeText}
           />
           <Submit text="Cadastro" />

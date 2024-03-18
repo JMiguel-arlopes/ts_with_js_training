@@ -6,6 +6,7 @@ interface InputProps {
   name: string;
   type: "text" | "number" | "email" | "password";
   placeholder: string;
+  value: string;
   maxLength: number;
   onTextChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -14,6 +15,7 @@ const Input: FunctionComponent<InputProps> = ({
   label,
   name,
   type,
+  value,
   placeholder,
   maxLength,
   onTextChange,
@@ -25,6 +27,7 @@ const Input: FunctionComponent<InputProps> = ({
         type={type}
         name={name}
         placeholder={placeholder}
+        value={value}
         onChange={onTextChange}
         maxLength={maxLength}
       />
