@@ -10,7 +10,7 @@ interface InputProps {
   maxLength: number;
   onTextChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
-
+  
 const Input: FunctionComponent<InputProps> = ({
   label,
   name,
