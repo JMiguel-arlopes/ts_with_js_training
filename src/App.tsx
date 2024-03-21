@@ -37,6 +37,7 @@ function App() {
     <>
       <section className="container">
         <Form onChangeText={onChangeText} submit={submit} user={user} />
+        <p>Cadastre-se</p>
       </section>
     </>
   );
