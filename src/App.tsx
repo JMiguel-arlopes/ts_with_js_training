@@ -20,12 +20,10 @@ function App() {
   const onChangeText = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setUser({ ...user!, [name]: value });
-    console.log(user);
   };
 
   const submit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(user!);
     setUser({
       name: "",
       email: "",
